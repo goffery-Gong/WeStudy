@@ -29,23 +29,28 @@ public class QuestionOne {
         Collections.sort(newScores);
         for (int index : indexs) {
             double scoreIndex = getScoreIndex(index - 1, scores, newScores);
+
             result = String.format("%.6f", scoreIndex * 100 / n);
             System.out.println(result);
 
         }
     }
 
+    private static int getScoreIndex2(int index, List<Integer> scores, List<Integer> newScores) {
+        //学生分数
+        int target = scores.get(index);
+        int size=0;
+        for(int i=0; i<newScores.size();i++){
+            if(newScores.get(i)<=target){
+                size++;
+            }
+        }
+        return size;
+    }
     /**
      * @param index     输入的学生index
      * @param scores
      * @param newScores
-     * @return
-     * 3
-     * 98 87 100
-     * 3
-     * 1
-     * 2
-     * 3
      */
     private static int getScoreIndex(int index, List<Integer> scores, List<Integer> newScores) {
         //学生分数
