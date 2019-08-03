@@ -1,4 +1,4 @@
-package NetEase;
+package NetEase.gzw;
 
 /**
  * @Author LingLong.gzw
