@@ -39,6 +39,7 @@ public class Question1 {
                     sum++;
                     group=new ArrayList<>();
                 }
+                
             }
         }
         System.out.println(sum+1);
