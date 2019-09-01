@@ -1,6 +1,5 @@
 package Tencent.JCP;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Q5 {
@@ -24,7 +23,7 @@ public class Q5 {
 			dp[i] += dp[i-1];
 		}
 		for (int i = 0; i < t; i++) {
-			BigInteger out_t = BigInteger.ZERO;
+			long out_t = 0;
 			for (int j = a[i]; j <= b[i]; j++)
 				out_t = out_t.add(new BigInteger(dp[j]+""));
 			System.out.println(out_t);
