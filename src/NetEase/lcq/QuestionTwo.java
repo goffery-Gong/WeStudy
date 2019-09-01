@@ -1,16 +1,20 @@
 package NetEase.lcq;
 
+import javax.lang.model.type.ArrayType;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class QuestionTwo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int t = scanner.nextInt();
         int num = scanner.nextInt();
-        int[] array = new int[num];
-        for(int i=0;i<num;i++){
-//            array[i] =
+        int[] score = new int[num];
+        while(scanner.hasNext()){
+           int a = scanner.nextInt();
+        }
+        for(int s : score){
+            System.out.println(s);
         }
 
     }

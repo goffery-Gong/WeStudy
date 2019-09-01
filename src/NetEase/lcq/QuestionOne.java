@@ -27,6 +27,19 @@ public class QuestionOne {
         int[] sortScore = new int[num];
         sortScore = Arrays.copyOf(score, num);
         Arrays.sort(sortScore);
+        for(int i=0;i<sortScore.length;i++){
+            if(sortScore[i] <= s) {
+                count++;
+            }else{
+                break;
+            }
+        }
+        double res = (count-1)/(double)num;
+        //double res = (mid)/(double)num;
+        res = res*100;
+        String result = String.format("%.6f", res);
+        return result;
+    }
 //        int lo = 0;
 //        int hi = num-1;
 //        int mid = lo+(hi-lo)/2;
@@ -41,28 +54,4 @@ public class QuestionOne {
 //                break;
 //            }
 //        }
-        if( s<= score[sortScore.length/2]){
-            for(int i=0;i<sortScore.length;i++){
-                if(sortScore[i] <= s) {
-                    count++;
-                }else{
-                    break;
-                }
-            }
-        }else{
-            for(int i=sortScore.length-1;i>=0;i--){
-                if(sortScore[i] > s) {
-                    count++;
-                }else{
-                    break;
-                }
-            }
-            count = num - count;
-        }
-        double res = (count-1)/(double)num;
-        //double res = (mid)/(double)num;
-        res = res*100;
-        String result = String.format("%.6f", res);
-        return result;
-    }
 }
