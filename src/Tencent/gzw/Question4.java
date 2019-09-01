@@ -13,14 +13,19 @@ public class Question4 {
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
-        List<Integer> scores =new ArrayList<>();
+        Node[] v = new Node[n];
+        Long[] inc = new Long[n];
+
         for (int i = 0; i < n; i++) {
-            scores.add(scanner.nextInt());
+            v[i].val = scanner.nextInt();
+            inc[i] = i == 0 ? v[i].val : inc[i - 1] + v[i].val;
+            v[i].start=i;
+            v[i].end=i;
         }
 
     }
 
-    class Node{
+    class Node {
         int val;
         int start;
         int end;
