@@ -20,12 +20,12 @@ public class Main {
             int idx_end = 0;
             for(int p=i-1;p>=0;p--){
                 if(arr[p]<w){
-                    idx_start = p;
+                    idx_start = p+1;
                 }
             }
             for(int p=i+1;p<n;p++){
                 if(arr[p]<w){
-                    idx_end = p;
+                    idx_end = p-1;
                 }
             }
             int sum = 0;
