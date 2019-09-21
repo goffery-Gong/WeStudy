@@ -31,7 +31,7 @@ public class Q1 {
 			}
 			temp.add(add_t);
 		}
-		int[] index=new int[len];//维护一个index数组记录第i个数组的当前长度
+		int[] index=new int[len];//维护一个index数组记录第i个数组的当前已经访问到的位置
 		int count=len; //数组数量
 		ArrayList<String> out=new ArrayList<>();//结果数组
 		while(count>0)
@@ -41,7 +41,7 @@ public class Q1 {
 				int now_len=temp.get(i).size();//当前数组的长度
 				if(index[i]==now_len)//当前数组长度等于n，跳过
 					continue;
-				else if(index[i]+n>=(now_len)) //当前数组长度小于n，全部加入out
+				else if(index[i]+n>=(now_len)) //当前数组已访问长度加上n>数组长度，全部加入out
 				{
 					for(int j=index[i];j<now_len;j++)
 					{
@@ -51,7 +51,7 @@ public class Q1 {
 					index[i]=now_len;//
 					count--;
 				}
-				else//当前数组长度大于n，将前n个加入out
+				else//将index[i]开始的前n个加入out
 				{
 					for(int j=index[i];j<(index[i]+n);j++)
 					{
